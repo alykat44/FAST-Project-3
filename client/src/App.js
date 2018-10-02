@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Header from './components/Header';
+
 import Wrapper from './components/Wrapper';
 import Navbar from './components/Navbar';
 import Form from './components/Form';
@@ -24,3 +24,10 @@ class App extends Component {
 }
 
 export default App;
+
+// const App = () => (
+
+//   <div>
+//     <Navbar />
+//   </div>
+// )
