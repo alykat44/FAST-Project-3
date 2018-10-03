@@ -8,11 +8,11 @@ class Form extends Component {
                 <form>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Name</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Name"></input>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Phone #</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Phone Number"></input>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Email address</label>
@@ -20,7 +20,7 @@ class Form extends Component {
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Location</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Location"></input>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Example select</label>
