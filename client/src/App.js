@@ -1,33 +1,40 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Customer  from "./pages/Customer";
+// import { Dispatch } from "./pages/Dispatch";
+// import { Map } from "./pages/Map";
+
+
 import React, { Component } from 'react';
 
-import Wrapper from './components/Wrapper';
-import Navbar from './components/Navbar';
-import Form from './components/Form';
+
 import './App.css';
 
-class App extends Component {
+const App = () => {
+
+
+  return (
+
+
+  < div >
+    <Router>
+
+
+      <Switch>
+        <Route exact path="/" component={Customer} />
+        {/* <Route exact path="/dispatch" component={Dispatch} />
+            <Route exact path="/map" component={Map} /> */}
+      </Switch>
+
+    </Router>
 
 
 
-  render() {
-    return (
-      <div>
-        <Navbar />
-        <Form />
-        <Wrapper />
-
-      </div>
+  </div >
+  )
 
 
-    );
-  }
 }
 
 export default App;
 
-// const App = () => (
 
-//   <div>
-//     <Navbar />
-//   </div>
-// )
