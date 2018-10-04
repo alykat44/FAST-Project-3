@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Navbar from "../../components/Navbar";
 import Wrapper from "../../components/Wrapper";
 // import API from "../../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Container } from "../../components/Container";
 // import { List, ListItem } from "../../components/List";
 import { Input, TextArea, Options } from "../../components/Form";
@@ -28,8 +28,8 @@ class Customer extends Component {
                             <Input
                                 // value={this.state.phone}
                                 // onChange={this.handleInputChange}
-                                // name="phone#"
-                                // placeholder="Phone (required)"
+                                name="phone#"
+                                placeholder="Phone (required)"
                             />
                             <Input
                                 // value={this.state.email}

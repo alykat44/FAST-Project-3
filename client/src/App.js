@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Customer  from "./pages/Customer";
-// import { Dispatch } from "./pages/Dispatch";
+import Customer from "./pages/Customer";
+import Dispatch from "./pages/Dispatch";
 // import { Map } from "./pages/Map";
 
 
@@ -25,21 +25,23 @@ const App = () => {
   return (
 
 
-  < div >
-    <Router>
+    < div >
+      <Router>
 
 
-      <Switch>
-        <Route exact path="/" component={Customer} />
-        {/* <Route exact path="/dispatch" component={Dispatch} />
-            <Route exact path="/map" component={Map} /> */}
-      </Switch>
+        <Switch>
+          <Route exact path="/" component={Customer} />
+          <Route exact path="/dispatch" component={Dispatch} />
+          {/* <Route exact path="/map" component={Map} /> */}
+        </Switch>
 
-    </Router>
-
-
+      </Router>
 
 
+
+    </ div>
+
+  )
 
 }
 
