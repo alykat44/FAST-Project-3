@@ -1,4 +1,5 @@
 import React from "react";
+import './Options.css';
 
 export const Options = props => (
     <div className="form-group">
