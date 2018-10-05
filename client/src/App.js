@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Customer  from "./pages/Customer";
-// import { Dispatch } from "./pages/Dispatch";
+import Customer from "./pages/Customer";
+import Dispatch from "./pages/Dispatch";
 // import { Map } from "./pages/Map";
 
 
@@ -25,21 +25,32 @@ const App = () => {
   return (
 
 
+<<<<<<< HEAD
   <div>
     <Router>
+=======
+    < div >
+      <Router>
+>>>>>>> 1015e6b4e5a44c36cb237f022c8599c13a9d9a50
 
 
-      <Switch>
-        <Route exact path="/" component={Customer} />
-        {/* <Route exact path="/dispatch" component={Dispatch} />
-            <Route exact path="/map" component={Map} /> */}
-      </Switch>
+        <Switch>
+          <Route exact path="/" component={Customer} />
+          <Route exact path="/dispatch" component={Dispatch} />
+          {/* <Route exact path="/map" component={Map} /> */}
+        </Switch>
 
-    </Router>
+      </Router>
 
 
 
+<<<<<<< HEAD
 </div>
+=======
+    </ div>
+
+  )
+>>>>>>> 1015e6b4e5a44c36cb237f022c8599c13a9d9a50
 
 }
 
