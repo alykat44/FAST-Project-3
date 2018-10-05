@@ -16,10 +16,11 @@ class Navbar extends Component {
                 </div>
                 <nav className="navbar navbar-dark bg-dark">
                     <button className="navbar-toggler" id="navbtn" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        {/* <span class="navbar-toggler-icon"></span> */}
+                        <span class="navbar-toggler-icon"></span>
                     </button>
                     <h1 className="text" id="title">FAST</h1>
                 </nav>
+
             </div>
 
         );
@@ -28,3 +29,6 @@ class Navbar extends Component {
 
 
 export default Navbar;
+
+
+
