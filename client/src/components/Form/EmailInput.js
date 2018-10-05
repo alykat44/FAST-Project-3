@@ -1,9 +1,9 @@
 import React from "react";
-import './Input.css';
+import './EmailInput.css';
 
-export const Input = props => (
+export const EmailInput = props => (
     <div className="form-group">
-        <label for="exampleFormControlInput1">Name</label>
+        <label for="exampleFormControlInput1">Email</label>
         <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" {...props} />
     </div>
 );

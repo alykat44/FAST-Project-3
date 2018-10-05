@@ -4,17 +4,17 @@ import Dispatch from "./pages/Dispatch";
 // import { Map } from "./pages/Map";
 
 
-import React, { Component } from 'react';
+import React from 'react';
 
 // import Header from './components/Header';
-import Wrapper from './components/Wrapper';
-import Navbar from './components/Navbar';
-import Form from './components/Form';
-import Alert from './components/Alert';
-import Card from './components/Card';
-import CardBtn from './components/CardBtn';
-import Hero from './components/Hero';
-import Geolocated from './components/Geolocation';
+// import Wrapper from './components/Wrapper';
+// import Navbar from './components/Navbar';
+// import Form from './components/Form';
+// import Alert from './components/Alert';
+// import Card from './components/Card';
+// import CardBtn from './components/CardBtn';
+// import Hero from './components/Hero';
+// import Geolocated from './components/Geolocation';
 
 
 import './App.css';

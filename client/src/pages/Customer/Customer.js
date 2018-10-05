@@ -6,7 +6,7 @@ import Wrapper from "../../components/Wrapper";
 // import { Link } from "react-router-dom";
 import { Container } from "../../components/Container";
 // import { List, ListItem } from "../../components/List";
-import { Input, TextArea, Options } from "../../components/Form";
+import { NameInput, PhoneInput, EmailInput, LocationInput, TextArea, Options} from "../../components/Form";
 
 class Customer extends Component {
 
@@ -19,25 +19,25 @@ class Customer extends Component {
                     <Navbar />
                     <Container fluid>
                         <form>
-                            <Input
+                            <NameInput
                                 // value={this.state.name}
                                 // onChange={this.handleInputChange}
                                 // name="name"
                                 // placeholder="Name (required)"
                             />
-                            <Input
+                            <PhoneInput
                                 // value={this.state.phone}
                                 // onChange={this.handleInputChange}
                                 name="phone#"
                                 placeholder="Phone (required)"
                             />
-                            <Input
+                            <EmailInput
                                 // value={this.state.email}
                                 // onChange={this.handleInputChange}
                                 // name="email"
                                 // placeholder="Email (required)"
                             />
-                            <Input
+                            <LocationInput
                                 // value={this.state.location}
                                 // onChange={this.handleInputChange}
                                 // name="location"
