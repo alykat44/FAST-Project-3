@@ -25,7 +25,7 @@ const App = () => {
   return (
 
 
-  < div >
+  <div>
     <Router>
 
 
@@ -39,7 +39,7 @@ const App = () => {
 
 
 
-
+</div>
 
 }
 
