@@ -6,21 +6,18 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const axios = require("axios");
-const router = require("./router");
+const routes = require("./routes");
 const mongoose = require("mongoose");
 
 app.set("view engine");
 app.set("views", path.join(__dirname, "../client"));
 app.use(express.static(path.join(__dirname, "../client")));
 
-var MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/FAST-project3";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/FAST-project3"
 
 mongoose.Promise = Promise;
-mongoose.connect(
-  MONGODB_URI,
-  { useNewUrlParser: true }
-);
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,7 +27,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use("/", router);
+app.use("/", routes);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
