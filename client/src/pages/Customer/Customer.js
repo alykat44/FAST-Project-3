@@ -4,7 +4,8 @@ import Navbar from "../../components/Navbar";
 import Wrapper from "../../components/Wrapper";
 // import API from "../../utils/API";
 // import { Link } from "react-router-dom";
-import { Container } from "../../components/Container";
+import {Container} from "../../components/Container";
+import SubBtn from "../../components/SubBtn";
 // import { List, ListItem } from "../../components/List";
 import { NameInput, PhoneInput, EmailInput, LocationInput, TextArea, Options} from "../../components/Form";
 
@@ -50,6 +51,7 @@ class Customer extends Component {
                                 // name="message"
                                 // placeholder="Message (required)"
                             />
+                            <SubBtn />
 
                         </form>
                     </Container>

@@ -4,10 +4,11 @@ import Navbar from "../../components/Navbar";
 import Wrapper from "../../components/Wrapper";
 // import API from "../../utils/API";
 // import { Link } from "react-router-dom";
-import { Container } from "../../components/Container";
+import {Container}  from "../../components/Container";
 // import { List, ListItem } from "../../components/List";
 import { NameInput, PhoneInput, TextArea } from "../../components/Form";
 import Card  from "../../components/Card";
+import MessBtn  from "../../components/MessBtn";
 
 class Dispatch extends Component {
 
@@ -41,6 +42,7 @@ class Dispatch extends Component {
                             // name="message"
                             // placeholder="Message (required)"
                             />
+                            <MessBtn />
 
                         </form>
                     </Container>

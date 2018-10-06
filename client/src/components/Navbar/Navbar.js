@@ -5,13 +5,13 @@ class Navbar extends Component {
     render() {
         return (
             <div className="pos-f-t">
-                <div className="collapse" id="navbarToggleExternalContent">
+                <div className="collapse " id="navbarToggleExternalContent">
                     <div className="bg-dark p-4">
-                        <a className="text-white h4" href="/towing">TOWING</a>
-                        <a className="text-white h4" href="/gas">NEED GAS</a>
-                        <a className="text-white h4" href="/jumpstart">NEED A JUMPSTART</a>
-                        <a className="text-white h4" href="/unlock">UNLOCK VEHICLE</a>
-                        <a className="text-white h4" href="/tire">CHANGE A TIRE</a>
+                        <a className="text-white h4" href="/customer">Customer</a>
+                        <a className="text-white h4" href="/dispatch">Dispatch</a>
+                        {/* <a className="text-white h4" href="/">Login</a> */}
+                        {/* <a className="text-white h4" href="/unlock">UNLOCK VEHICLE</a>
+                        <a className="text-white h4" href="/tire">CHANGE A TIRE</a>  */}
                     </div>
                 </div>
                 <nav className="navbar navbar-dark bg-dark">
