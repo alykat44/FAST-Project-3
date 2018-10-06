@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Customer from "./pages/Customer";
 import Dispatch from "./pages/Dispatch";
+import Login from "./pages/Login";
 // import { Map } from "./pages/Map";
 
 
@@ -30,7 +31,8 @@ const App = () => {
 
 
         <Switch>
-          <Route exact path="/" component={Customer} />
+          <Route exact path="/" component={Login} />
+          <Route exact path="/customer" component={Customer} />
           <Route exact path="/dispatch" component={Dispatch} />
           {/* <Route exact path="/map" component={Map} /> */}
         </Switch>
