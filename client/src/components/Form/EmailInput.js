@@ -1,9 +1,16 @@
 import React from "react";
-import './EmailInput.css';
+import "./EmailInput.css";
 
 export const EmailInput = props => (
-    <div className="form-group">
-        <label for="exampleFormControlInput1">Email</label>
-        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" {...props} />
-    </div>
+  <div className="form-group">
+    <label for="Email">Email</label>
+    <input
+      type="Email"
+      className="form-control"
+      placeholder="name@example.com"
+      name="Email"
+      value={props.Email}
+      onChange={props.handleInputChange}
+    />
+  </div>
 );
