@@ -3,7 +3,7 @@ import "./Options.css";
 
 export const Options = props => (
   <div className="form-group">
-    <label for="Issue">Emergency Services</label>
+    <label htmlfor="Issue">Emergency Services</label>
     <select
       className="form-control"
       name="Issue"

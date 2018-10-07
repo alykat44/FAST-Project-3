@@ -3,11 +3,11 @@ import Customer from "./pages/Customer";
 import Dispatch from "./pages/Dispatch";
 import Login from "./pages/Login";
 import React from 'react';
-import Geolocated from './components/Geolocation';
-import ReactMapboxGl, { Layer, Feature, Marker } from "react-mapbox-gl";
-const Map = ReactMapboxGl({
-  accessToken: "pk.eyJ1Ijoia2M5Z3BqIiwiYSI6ImNqbXhtdHFsbzBjajYzdXVtdXlpanFhZ2cifQ.NCOt6WIwO_19bmi8DUUANQ"
-});
+// import Geolocated from './components/Geolocation';
+// import ReactMapboxGl, { Layer, Feature, Marker } from "react-mapbox-gl";
+// const Map = ReactMapboxGl({
+//   accessToken: "pk.eyJ1Ijoia2M5Z3BqIiwiYSI6ImNqbXhtdHFsbzBjajYzdXVtdXlpanFhZ2cifQ.NCOt6WIwO_19bmi8DUUANQ"
+// });
 
 const App = () => {
   return (
@@ -26,7 +26,7 @@ const App = () => {
 
 
 
-      <div><Geolocated /></div>
+      {/* <div><Geolocated /></div>
       <Map
         style="mapbox://styles/mapbox/streets-v9"
         containerStyle={{
@@ -79,7 +79,7 @@ const App = () => {
           anchor="bottom">
           <img src={"https://i.imgur.com/xmmhggT.png?1"} />
         </Marker>
-      </Map>
+      </Map> */}
     </div>
   )
 }

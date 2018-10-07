@@ -3,7 +3,7 @@ import "./TextArea.css";
 
 export const TextArea = props => (
   <div className="form-group">
-    <label for="Message">Message</label>
+    <label htmlfor="Message">Message</label>
     <textarea
       className="form-control"
       rows="5"

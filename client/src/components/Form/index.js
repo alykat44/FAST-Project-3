@@ -1,4 +1,3 @@
-export { default } from "./Form";
 export * from "./NameInput";
 export * from "./Options";
 export * from "./TextArea";
