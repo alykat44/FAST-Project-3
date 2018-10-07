@@ -13,11 +13,15 @@ app.set("view engine");
 app.set("views", path.join(__dirname, "../client"));
 app.use(express.static(path.join(__dirname, "../client")));
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/FAST-project3"
+const MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/FAST-project3";
 
 mongoose.Promise = Promise;
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(
+  MONGODB_URI,
+  { useNewUrlParser: true }
+);
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,6 +32,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use("/", routes);
+
+app.use("/customer", router);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));

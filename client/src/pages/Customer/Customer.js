@@ -21,11 +21,11 @@ import API from "../../utils/API";
 class Customer extends Component {
   state = {
     Name: "",
-    Phone: 0,
+    Phone: "",
     Email: "",
     Location: "",
     Issue: "",
-    Comments: ""
+    Message: ""
   };
 
   handleInputChange = event => {
@@ -45,16 +45,16 @@ class Customer extends Component {
       Email: this.state.Email,
       Location: this.state.Location,
       Issue: this.state.Issue,
-      Comments: this.state.Comments
+      Message: this.state.Message
     })
       .then(res =>
         this.setState({
           Name: "",
-          Phone: 0,
+          Phone: "",
           Email: "",
           Location: "",
           Issue: "",
-          Comments: ""
+          Message: ""
         })
       )
       .catch(err => console.log(err));
@@ -75,27 +75,27 @@ class Customer extends Component {
               <PhoneInput
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                Name={this.state.Phone}
+                Phone={this.state.Phone}
               />
               <EmailInput
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                Name={this.state.Email}
+                Email={this.state.Email}
               />
               <LocationInput
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                Name={this.state.Location}
+                Location={this.state.Location}
               />
               <Options
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                Name={this.state.Issue}
+                Issue={this.state.Issue}
               />
               <TextArea
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                Name={this.state.Message}
+                Message={this.state.Message}
               />
               <SubBtn onClick={this.handleFormSubmit} />
             </form>

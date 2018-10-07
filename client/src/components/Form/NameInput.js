@@ -7,7 +7,7 @@ export const NameInput = props => (
     <input
       type="text"
       className="form-control"
-      placeholder="name"
+      placeholder="Full Name Required"
       name="Name"
       value={props.Name}
       onChange={props.handleInputChange}

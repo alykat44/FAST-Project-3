@@ -10,6 +10,7 @@ export const Options = props => (
       value={props.Issue}
       onChange={props.handleInputChange}
     >
+      <option>What Do You Need Help With? (Select One)</option>
       <option>Towing</option>
       <option>Need Gas</option>
       <option>Need A Jumpstart</option>
