@@ -7,13 +7,13 @@ class LoginNav extends Component {
       <div className="pos-f-t">
         <div className="collapse" id="navbarToggleExternalContent">
           <div className="bg-dark p-4" id="navanchors">
-            <div class="row">
-              <div class="column-1-6">
+            <div className="row">
+              <div className="column-1-6">
                 <div className="nav-item dropdown dropright" id="nav-anchors">
                   <a
                     className="nav-link dropdown-toggle"
                     id="nav-home"
-                    href=""
+                    href="a"
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
@@ -73,10 +73,10 @@ class LoginNav extends Component {
                       </button>
                     </form>
                     <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="">
+                    <a className="dropdown-item" href="a">
                       New around here? Sign up
                     </a>
-                    <a className="dropdown-item" href="">
+                    <a className="dropdown-item" href="a">
                       Forgot password?
                     </a>
                   </div>
@@ -87,7 +87,7 @@ class LoginNav extends Component {
                   <a
                     className="nav-link dropdown-toggle"
                     id="nav-home"
-                    href=""
+                    href="a"
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
@@ -147,10 +147,10 @@ class LoginNav extends Component {
                       </button>
                     </form>
                     <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="">
+                    <a className="dropdown-item" href="a">
                       New around here? Sign up
                     </a>
-                    <a className="dropdown-item" href="">
+                    <a className="dropdown-item" href="a">
                       Forgot password?
                     </a>
                   </div>
@@ -191,8 +191,4 @@ class LoginNav extends Component {
 
 export default LoginNav;
 
-// <a className="text-white h4" href="/towing">TOWING</a>
-// <a className="text-white h4" href="/gas">NEED GAS</a>
-// <a className="text-white h4" href="/jumpstart">NEED A JUMPSTART</a>
-// <a className="text-white h4" href="/unlock">UNLOCK VEHICLE</a>
-// <a className="text-white h4" href="/tire">CHANGE A TIRE</a>
+

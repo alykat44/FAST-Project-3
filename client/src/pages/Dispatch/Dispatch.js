@@ -4,11 +4,12 @@ import Navbar from "../../components/Navbar";
 import Wrapper from "../../components/Wrapper";
 // import API from "../../utils/API";
 // import { Link } from "react-router-dom";
-import {Container}  from "../../components/Container";
+import { Container } from "../../components/Container";
 // import { List, ListItem } from "../../components/List";
-import { NameInput, PhoneInput, TextArea } from "../../components/Form";
-import Card  from "../../components/Card";
-import MessBtn  from "../../components/MessBtn";
+import { TextArea } from "../../components/Form";
+import Card from "../../components/Card";
+import MessBtn from "../../components/MessBtn";
+import CardDispatch from "../../components/CardDispatch"
 
 class Dispatch extends Component {
 
@@ -22,29 +23,14 @@ class Dispatch extends Component {
                     <Container fluid>
 
                         <form>
-                            <Card />
-                            <NameInput
-                            // value={this.state.name}
-                            // onChange={this.handleInputChange}
-                            // name="name"
-                            // placeholder="Name (required)"
-                            />
-                            <PhoneInput
-                            // value={this.state.phone}
-                            // onChange={this.handleInputChange}
-                            // name="phone#"
-                            // placeholder="Phone (required)"
-                            />
 
-                            <TextArea
-                            // value={this.state.message}
-                            // onChange={this.handleInputChange}
-                            // name="message"
-                            // placeholder="Message (required)"
-                            />
+                            <Card />
+                            <CardDispatch />
+                            <TextArea />
                             <MessBtn />
 
                         </form>
+
                     </Container>
 
                 </Wrapper>

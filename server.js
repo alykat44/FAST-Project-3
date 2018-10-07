@@ -13,7 +13,7 @@ app.set("view engine");
 app.set("views", path.join(__dirname, "../client"));
 app.use(express.static(path.join(__dirname, "../client")));
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/FAST-project3"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/FAST-project3"
 
 mongoose.Promise = Promise;
 

@@ -1,0 +1,14 @@
+.card {
+    width: 100%;
+    color: black;
+    
+}
+
+.list-group-item {
+    background-color: grey;
+}
+
+#dispatch-card {
+    background-color: blue;
+    padding: none;
+}
