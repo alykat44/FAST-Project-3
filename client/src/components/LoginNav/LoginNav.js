@@ -82,7 +82,7 @@ class LoginNav extends Component {
                   </div>
                 </div>
               </div>
-              <div class="column-2-6">
+              <div className="column-2-6">
                 <div className="nav-item dropdown dropright">
                   <a
                     className="nav-link dropdown-toggle"

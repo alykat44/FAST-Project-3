@@ -5,9 +5,12 @@ export default {
   saveCustomer: function(customerData) {
     console.log("savedcustomer API");
     console.log(customerData);
-    return axios.post("/api/customers", customerData);
+    return axios.post("/api/customer", customerData);
   },
-  getCustomer: function() {
-    return axios.get("/api/customers");
-  }
+
+  getCustomer: function(id) {
+    return axios.get("/api/customer/" + id);
+  },
+
+  
 };

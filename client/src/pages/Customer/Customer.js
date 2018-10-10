@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import DeleteBtn from "../../components/DeleteBtn";
 import Navbar from "../../components/Navbar";
 import Wrapper from "../../components/Wrapper";
-// import API from "../../utils/API";
+import API from "../../utils/API";
 // import { Link } from "react-router-dom";
 import { Container } from "../../components/Container";
 import SubBtn from "../../components/SubBtn";
@@ -16,10 +16,11 @@ import {
   Options
 } from "../../components/Form";
 
-import API from "../../utils/API";
+// import API from "../../utils/API";
 
 class Customer extends Component {
   state = {
+    customer: [],
     Name: "",
     Phone: "",
     Email: "",
@@ -38,7 +39,7 @@ class Customer extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    alert("working");
+    // alert("working");
     API.saveCustomer({
       Name: this.state.Name,
       Phone: this.state.Phone,
@@ -97,7 +98,10 @@ class Customer extends Component {
                 handleFormSubmit={this.handleFormSubmit}
                 Message={this.state.Message}
               />
+              
               <SubBtn onClick={this.handleFormSubmit} />
+              {/* <SubBtn onClick={<Link> to={"/customers/" + customer._id}</Link>} /> */}
+              
             </form>
           </Container>
         </Wrapper>

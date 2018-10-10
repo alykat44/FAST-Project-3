@@ -1,17 +1,28 @@
 import React, { Component } from "react";
-// import DeleteBtn from "../../components/DeleteBtn";
 import Navbar from "../../components/Navbar";
 import Wrapper from "../../components/Wrapper";
-// import API from "../../utils/API";
-// import { Link } from "react-router-dom";
+import API from "../../utils/API";
 import { Container } from "../../components/Container";
-// import { List, ListItem } from "../../components/List";
 import { TextArea } from "../../components/Form";
 import Card from "../../components/Card";
 import MessBtn from "../../components/MessBtn";
-import CardDispatch from "../../components/CardDispatch"
+import { CardDispatch, ListCardDispatch } from "../../components/CardDispatch";
+
 
 class Dispatch extends Component {
+    state = {
+        
+        customer: {}
+    };
+
+    componentDidMount() {
+        API.getCustomer(this.props.match.params.id)
+            .then(res => this.setState({ customers: res.data })) 
+            .catch(err => console.log(err));
+            
+    }
+
+
 
 
     render() {
@@ -25,9 +36,28 @@ class Dispatch extends Component {
                         <form>
 
                             <Card />
-                            <CardDispatch />
-                            <TextArea />
+
+                            <CardDispatch>
+
+                                <ListCardDispatch> 
+                            
+                                        {this.state.customer.Name}
+                                        {this.state.customer.Phone}
+                                        {this.state.customer.Email}
+                                        {this.state.customer.Location}
+                                        {this.state.customer.Issue}
+                                        {this.state.customer.Message}
+                                    
+                                </ListCardDispatch>
+
+                            </CardDispatch> 
+
                             <MessBtn />
+
+
+
+                            < TextArea />
+
 
                         </form>
 
@@ -41,3 +71,4 @@ class Dispatch extends Component {
 }
 
 export default Dispatch;
+
