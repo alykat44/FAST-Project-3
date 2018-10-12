@@ -49,6 +49,7 @@ class Customer extends Component {
     })
       .then(res =>
         this.setState({
+          Customer: res.data,
           Name: "",
           Phone: "",
           Email: "",

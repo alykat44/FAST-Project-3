@@ -8,15 +8,12 @@ import { Container } from "../../components/Container";
 // import { List, ListItem } from "../../components/List";
 import { TextArea } from "../../components/Form";
 import Card from "../../components/Card";
+
 import SMS from "../../components/SMS/SMS.js";
-import CardDispatch from "../../components/CardDispatch"
-
-class Dispatch extends Component {
-
-
-    render() {
-        return (
-            <div>
+import MessBtn from "../../components/MessBtn";
+import CardDispatch from "../../components/CardDispatch";
+import { List, ListItem } from "../../components/List";
+import API from "../../utils/API";
 
                 <Wrapper>
                     <Navbar />
@@ -27,14 +24,61 @@ class Dispatch extends Component {
                             <CardDispatch />
                             <SMS />
                         </form>
+class Dispatch extends Component {
+  state = {
+    customers: []
+  };
 
-                    </Container>
+  componentDidMount() {
+    this.loadCustomers();
+  }
 
-                </Wrapper>
-            </div>
 
-        );
-    }
+  loadCustomers = () => {
+    API.getCustomers()
+      .then(res => {
+        console.log(res.data);
+        this.setState({
+          customers: res.data
+        });
+      })
+      .catch(err => console.log(err));
+  };
+
+  render() {
+    return (
+      <div>
+        <Wrapper>
+          <Navbar />
+          <Container fluid>
+            <form>
+              <Card />
+              <CardDispatch />
+              {this.state.customers.length ? (
+                <List>
+                  {this.state.customers.map(customer => (
+                    <ListItem key={customer._id}>
+                      {customer.Name}
+                      {customer.Phone}
+                      {customer.Email}
+                      {customer.Location}
+                      {customer.Issue}
+                      {customer.Message}
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
+                <h3>No Work Orders At This Time</h3>
+              )}
+
+              <TextArea />
+              <MessBtn />
+            </form>
+          </Container>
+        </Wrapper>
+      </div>
+    );
+  }
 }
 
 export default Dispatch;
