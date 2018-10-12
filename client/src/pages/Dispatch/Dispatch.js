@@ -15,15 +15,7 @@ import CardDispatch from "../../components/CardDispatch";
 import { List, ListItem } from "../../components/List";
 import API from "../../utils/API";
 
-                <Wrapper>
-                    <Navbar />
-                    <Container fluid>
-
-                        <form>
-                            <Card />
-                            <CardDispatch />
-                            <SMS />
-                        </form>
+                
 class Dispatch extends Component {
   state = {
     customers: []
@@ -71,12 +63,12 @@ class Dispatch extends Component {
                 <h3>No Work Orders At This Time</h3>
               )}
 
-              <TextArea />
-              <MessBtn />
+              <SMS />
             </form>
           </Container>
         </Wrapper>
       </div>
+      
     );
   }
 }
