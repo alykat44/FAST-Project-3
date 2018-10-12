@@ -9,8 +9,7 @@ import MessBtn from "../../components/MessBtn";
 import CardDispatch from "../../components/CardDispatch";
 import { List, ListItem } from "../../components/List";
 
-import API from "../../utils/API";
-
+                
 class Dispatch extends Component {
   state = {
     customers: []
@@ -57,12 +56,12 @@ class Dispatch extends Component {
                 <h3>No Work Orders At This Time</h3>
               )}
 
-              <TextArea />
-              <MessBtn />
+              <SMS />
             </form>
           </Container>
         </Wrapper>
       </div>
+      
     );
   }
 }
