@@ -4,4 +4,6 @@ const customerRoutes = require("./customers");
 // Book routes
 router.use("/customers", customerRoutes);
 
+// router.use("/dispatch", customerRoutes);
+
 module.exports = router;

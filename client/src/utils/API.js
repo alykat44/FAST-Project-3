@@ -7,7 +7,7 @@ export default {
     console.log(customerData);
     return axios.post("/api/customers", customerData);
   },
-  getCustomer: function() {
+  getCustomers: function() {
     return axios.get("/api/customers");
   }
 };
