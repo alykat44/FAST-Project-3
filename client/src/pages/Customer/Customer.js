@@ -26,7 +26,7 @@ class Customer extends Component {
     Email: "",
     Location: "",
     Issue: "",
-    Message: ""
+    Comments: ""
   };
 
   handleInputChange = event => {
@@ -46,7 +46,7 @@ class Customer extends Component {
       Email: this.state.Email,
       Location: this.state.Location,
       Issue: this.state.Issue,
-      Message: this.state.Message
+      Comments: this.state.Message
     })
       .then(res =>
         this.setState({
@@ -96,11 +96,11 @@ class Customer extends Component {
               <TextArea
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                Message={this.state.Message}
+                Comments={this.state.Message}
               />
               
               <SubBtn onClick={this.handleFormSubmit} />
-              {/* <SubBtn onClick={<Link> to={"/customers/" + customer._id}</Link>} /> */}
+              
               
             </form>
           </Container>

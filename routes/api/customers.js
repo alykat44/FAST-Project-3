@@ -6,10 +6,10 @@ router.route("/")
 
 router.route("/customer")
   .post(customersController.create)
-  .get(customersController.findAll);
+  
 
 router
-  .route("/:id")
+  .route("/Issue")
   .get(customersController.findById)
   .put(customersController.update)
   .delete(customersController.remove);

@@ -7,7 +7,7 @@ const CustomerSchema = new Schema({
   Email: String,
   Location: String,
   Issue: String,
-  Message: String
+  Comments: String
   // Date: { type: Date, default: Date.now }
 });
 

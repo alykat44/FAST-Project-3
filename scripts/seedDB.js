@@ -12,7 +12,7 @@ const CustomerSeed = [
     Email: "example@gmail.com",
     Location: "KS",
     Issue: "Tire",
-    Message: "North Interstate"
+    Comments: "North Interstate"
     // Date: new Date(Date.now())
   }
 ];
