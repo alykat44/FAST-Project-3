@@ -1,4 +1,5 @@
 import axios from "axios";
+import nexmo from "nexmo";
 
 export default {
   // Saves a Customer to the database
@@ -9,5 +10,8 @@ export default {
   },
   getCustomer: function() {
     return axios.get("/api/customers");
+  },
+  sendText: function(){
+    return nexmo.post("/api/sms");
   }
 };

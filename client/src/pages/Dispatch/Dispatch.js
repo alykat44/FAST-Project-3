@@ -8,7 +8,7 @@ import { Container } from "../../components/Container";
 // import { List, ListItem } from "../../components/List";
 import { TextArea } from "../../components/Form";
 import Card from "../../components/Card";
-import MessBtn from "../../components/MessBtn";
+import SMS from "../../components/SMS/SMS.js";
 import CardDispatch from "../../components/CardDispatch"
 
 class Dispatch extends Component {
@@ -23,12 +23,9 @@ class Dispatch extends Component {
                     <Container fluid>
 
                         <form>
-
                             <Card />
                             <CardDispatch />
-                            <TextArea />
-                            <MessBtn />
-
+                            <SMS />
                         </form>
 
                     </Container>
