@@ -30,13 +30,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/public"));
 }
 
-<<<<<<< HEAD
-app.use(routes)
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
-=======
 app.use("/", routes);
 
 app.use("/customers", routes);
@@ -46,7 +39,6 @@ app.use("/dispatch", routes);
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
->>>>>>> 8f0b0aec74e06d08b60d3646847afeccdca26df9
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);

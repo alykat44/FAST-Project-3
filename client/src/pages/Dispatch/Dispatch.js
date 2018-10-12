@@ -5,63 +5,12 @@ import Wrapper from "../../components/Wrapper";
 import { Container } from "../../components/Container";
 import { TextArea } from "../../components/Form";
 import Card from "../../components/Card";
-
-import SMS from "../../components/SMS/SMS.js";
 import MessBtn from "../../components/MessBtn";
-<<<<<<< HEAD
-import { CardDispatch, ListCardDispatch } from "../../components/CardDispatch";
-
-
-class Dispatch extends Component {
-   
-
-
-
-
-    render() {
-        return (
-            <div>
-
-                <Wrapper>
-                    <Navbar />
-                    <Container fluid>
-
-                        <form>
-
-                            <Card />
-
-                            <CardDispatch>
-
-                                <ListCardDispatch> 
-                            
-                                        
-                                    
-                                </ListCardDispatch>
-
-                            </CardDispatch> 
-
-                            <MessBtn />
-
-
-
-                            < TextArea />
-
-
-                        </form>
-=======
 import CardDispatch from "../../components/CardDispatch";
 import { List, ListItem } from "../../components/List";
+
 import API from "../../utils/API";
 
-                <Wrapper>
-                    <Navbar />
-                    <Container fluid>
-
-                        <form>
-                            <Card />
-                            <CardDispatch />
-                            <SMS />
-                        </form>
 class Dispatch extends Component {
   state = {
     customers: []
@@ -70,8 +19,6 @@ class Dispatch extends Component {
   componentDidMount() {
     this.loadCustomers();
   }
->>>>>>> 8f0b0aec74e06d08b60d3646847afeccdca26df9
-
 
   loadCustomers = () => {
     API.getCustomers()
