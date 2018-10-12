@@ -8,12 +8,22 @@ import { Container } from "../../components/Container";
 // import { List, ListItem } from "../../components/List";
 import { TextArea } from "../../components/Form";
 import Card from "../../components/Card";
+
+import SMS from "../../components/SMS/SMS.js";
 import MessBtn from "../../components/MessBtn";
 import CardDispatch from "../../components/CardDispatch";
 import { List, ListItem } from "../../components/List";
-
 import API from "../../utils/API";
 
+                <Wrapper>
+                    <Navbar />
+                    <Container fluid>
+
+                        <form>
+                            <Card />
+                            <CardDispatch />
+                            <SMS />
+                        </form>
 class Dispatch extends Component {
   state = {
     customers: []
@@ -22,6 +32,7 @@ class Dispatch extends Component {
   componentDidMount() {
     this.loadCustomers();
   }
+
 
   loadCustomers = () => {
     API.getCustomers()
