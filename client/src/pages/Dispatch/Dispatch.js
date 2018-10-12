@@ -6,6 +6,7 @@ import { Container } from "../../components/Container";
 import { TextArea } from "../../components/Form";
 import Card from "../../components/Card";
 import MessBtn from "../../components/MessBtn";
+<<<<<<< HEAD
 import { CardDispatch, ListCardDispatch } from "../../components/CardDispatch";
 
 
@@ -45,14 +46,67 @@ class Dispatch extends Component {
 
 
                         </form>
+=======
+import CardDispatch from "../../components/CardDispatch";
+import { List, ListItem } from "../../components/List";
 
-                    </Container>
+import API from "../../utils/API";
 
-                </Wrapper>
-            </div>
+class Dispatch extends Component {
+  state = {
+    customers: []
+  };
 
-        );
-    }
+  componentDidMount() {
+    this.loadCustomers();
+  }
+>>>>>>> 8f0b0aec74e06d08b60d3646847afeccdca26df9
+
+  loadCustomers = () => {
+    API.getCustomers()
+      .then(res => {
+        console.log(res.data);
+        this.setState({
+          customers: res.data
+        });
+      })
+      .catch(err => console.log(err));
+  };
+
+  render() {
+    return (
+      <div>
+        <Wrapper>
+          <Navbar />
+          <Container fluid>
+            <form>
+              <Card />
+              <CardDispatch />
+              {this.state.customers.length ? (
+                <List>
+                  {this.state.customers.map(customer => (
+                    <ListItem key={customer._id}>
+                      {customer.Name}
+                      {customer.Phone}
+                      {customer.Email}
+                      {customer.Location}
+                      {customer.Issue}
+                      {customer.Message}
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
+                <h3>No Work Orders At This Time</h3>
+              )}
+
+              <TextArea />
+              <MessBtn />
+            </form>
+          </Container>
+        </Wrapper>
+      </div>
+    );
+  }
 }
 
 export default Dispatch;

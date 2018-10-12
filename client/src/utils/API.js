@@ -7,10 +7,16 @@ export default {
     console.log(customerData);
     return axios.post("/api/customers", customerData);
   },
+<<<<<<< HEAD
 
   getCustomer: function(id) {
     return axios.get("/api/customers/" + id);
   },
 
   
+=======
+  getCustomers: function() {
+    return axios.get("/api/customers");
+  }
+>>>>>>> 8f0b0aec74e06d08b60d3646847afeccdca26df9
 };
