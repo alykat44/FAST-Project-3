@@ -28,6 +28,29 @@ class Customer extends Component {
     Message: ""
   };
 
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   const name = this.state.Name;
+  //   const email = this.state.Email;
+  //   const message = "Help is on the way!!!!";
+  //   axios({
+  //     method: "POST",
+  //     url: "http://localhost:3002/send",
+  //     data: {
+  //       name: name,
+  //       email: email,
+  //       messsage: message
+  //     }
+  //   }).then(res => {
+  //     if (res.data.msg === "success") {
+  //       alert("Message Sent.");
+  //       // this.resetForm();
+  //     } else if (res.data.msg === "fail") {
+  //       alert("Message failed to send.");
+  //     }
+  //   });
+  // }
+
   handleInputChange = event => {
     const { name, value } = event.target;
     console.log(name);
@@ -58,6 +81,32 @@ class Customer extends Component {
           Message: ""
         })
       )
+      .then(res => {
+        const name = this.state.Name;
+        const email = this.state.Email;
+        const message = "Help is on the way!!!!";
+        API.sendemail({
+          name: name,
+          email: email,
+          messsage: message
+        })
+          // axios({
+          //   method: "POST",
+          //   url: "http://localhost:3002/send",
+          //   data: {
+          //     name: name,
+          //     email: email,
+          //     messsage: message
+          //   }
+          .then(res => {
+            if (res.data.msg === "success") {
+              alert("Message Sent.");
+              // this.resetForm();
+            } else if (res.data.msg === "fail") {
+              alert("Message failed to send.");
+            }
+          });
+      })
       .catch(err => console.log(err));
   };
 

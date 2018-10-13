@@ -3,7 +3,7 @@ import "./LocationInput.css";
 
 export const LocationInput = props => (
   <div className="form-group">
-    <label htmlfor="Location">Location</label>
+    <label htmlFor="Location">Location</label>
     <input
       type="text"
       className="form-control"

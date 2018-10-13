@@ -3,7 +3,7 @@ import "./NameInput.css";
 
 export const NameInput = props => (
   <div className="form-group">
-    <label htmlfor="Name">Name</label>
+    <label htmlFor="Name">Name</label>
     <input
       type="text"
       className="form-control"

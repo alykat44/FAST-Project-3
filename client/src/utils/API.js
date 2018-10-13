@@ -9,5 +9,8 @@ export default {
   },
   getCustomers: function() {
     return axios.get("/api/customers");
+  },
+  sendemail: function() {
+    return axios.get("/send");
   }
 };
