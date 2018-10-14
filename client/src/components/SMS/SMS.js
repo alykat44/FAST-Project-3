@@ -9,24 +9,29 @@ class TextArea extends Component {
         text: "",
         number: "",
        };
-
+       this.handleChange = this.handleChange.bind(this);
+       this.handleSubmit = this.handleSubmit.bind(this);
       }
 
-  handleInputChange = event => {
-    // const { name, value } = event.target;
-    // console.log(text, number);
-    // this.setState({
-    //   [text]: text,
-    //   [number]: number
-    // });
-  };
+  handleChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
 
-  handleFormSubmit = event => {
+    this.setState({
+      [name]: value
+    });
+    console.log(this.state.text);
+    console.log(this.state.number);
+  }
+  
+  handleSubmit(event) {
+    var vm = this;
     event.preventDefault();
     alert("working");
-    API.sms({
-      text: this.state.text,
-      number: this.state.number,
+    API.sendText({
+      text: vm.state.text,
+      number: vm.state.number,
     })
       .then(res =>
         this.setState({
@@ -40,22 +45,26 @@ class TextArea extends Component {
   render() {
     return (
       <div className="form-group">
-      <textarea
+      <input
         className="form-control"
         rows="5"
-        name="Message"
+        name="text"
+        type = "text"
         placeholder="Text Message"
-        value={this.state.text}
+        value={this.state.text} 
+        onChange={this.handleChange}
       />
-       <textarea
+       <input
         className="form-control"
         rows="1"
-        name="Number"
+        name="number"
+        type = "text"
         placeholder="Phone Number"
-        value={this.state.number}
+        value={this.state.number} 
+        onChange={this.handleChange}
       
       />
-      <button type="button" className="btn btn-primary btn-block" onClick={this.handleNumberChange}> Send Text </button>
+      <button type="submit" value="Submit" className="btn btn-primary btn-block" onClick={this.handleSubmit}> Send Text </button>
   
     </div>
         
