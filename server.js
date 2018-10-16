@@ -37,6 +37,8 @@ app.use("/customers", routes);
 
 app.use("/dispatch", routes);
 
+app.use("/sms", routes);
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
