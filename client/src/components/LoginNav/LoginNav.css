@@ -1,12 +1,24 @@
 a {
-    font-size: 24px;
-    color: white;
+    padding: 10px;
+
 }
 
-P {
-    font-size: 24px;
+.navbar-toggler {
+    background-image: url("../../images/bigone.jpg");
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-position: center;
+    /* background-attachment: fixed; */
+    height: 200px;
+    width: 250px;
+    border-radius: 25%;
+}
+
+#title {
     color: white;
-    
+    font-size: 144px;
+    margin: auto;
+    letter-spacing: 45px;
 }
 
 

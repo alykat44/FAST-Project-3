@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 // import DeleteBtn from "../../components/DeleteBtn";
-import Navbar from "../../components/Navbar";
+// import Navbar from "../../components/Navbar";
 import Wrapper from "../../components/Wrapper";
-// import API from "../../utils/API";
+import API from "../../utils/API";
 // import { Link } from "react-router-dom";
 import { Container } from "../../components/Container";
 import SubBtn from "../../components/SubBtn";
@@ -16,16 +16,17 @@ import {
   Options
 } from "../../components/Form";
 
-import API from "../../utils/API";
+// import API from "../../utils/API";
 
 class Customer extends Component {
   state = {
+    customer: [],
     Name: "",
     Phone: "",
     Email: "",
     Location: "",
     Issue: "",
-    Message: ""
+    Comments: ""
   };
 
   handleInputChange = event => {
@@ -38,14 +39,14 @@ class Customer extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    alert("working");
+    // alert("working");
     API.saveCustomer({
       Name: this.state.Name,
       Phone: this.state.Phone,
       Email: this.state.Email,
       Location: this.state.Location,
       Issue: this.state.Issue,
-      Message: this.state.Message
+      Comments: this.state.Message
     })
       .then(res =>
         this.setState({
@@ -65,7 +66,6 @@ class Customer extends Component {
     return (
       <div>
         <Wrapper>
-          <Navbar />
           <Container fluid>
             <form>
               <NameInput
@@ -96,9 +96,12 @@ class Customer extends Component {
               <TextArea
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                Message={this.state.Message}
+                Comments={this.state.Message}
               />
+              
               <SubBtn onClick={this.handleFormSubmit} />
+              
+              
             </form>
           </Container>
         </Wrapper>
