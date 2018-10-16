@@ -1,194 +1,98 @@
 import React, { Component } from "react";
 import "./LoginNav.css";
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 
 class LoginNav extends Component {
+  constructor() {
+    super()
+    this.logout = this.logout.bind(this)
+    
+  }
+
+  logout(event) {
+    event.preventDefault()
+    console.log('logging out')
+    axios.post('/user/logout').then(response => {
+      console.log(response.data)
+      if (response.status === 200) {
+        this.props.updateUser({
+          loggedIn: false,
+          username: null
+        })
+      }
+    }).catch(error => {
+      console.log('Logout error')
+    })
+  }
+
+  
+
   render() {
+
+    const loggedIn = this.props.loggedIn;
+    console.log('navbar render, props: ')
+    console.log(this.props);
+
     return (
-      <div className="pos-f-t">
-        <div className="collapse" id="navbarToggleExternalContent">
-          <div className="bg-dark p-4" id="navanchors">
-            <div className="row">
-              <div className="column-1-6">
-                <div className="nav-item dropdown dropright" id="nav-anchors">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    id="nav-home"
-                    href="a"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Customer
-                  </a>
-                  <div className="dropdown-menu" id="login-menu">
-                    <form className="px-4 py-3">
-                      <div className="form-group">
-                        <label
-                          htmlFor="userNameDropDownForm"
-                          id="label-user-form"
-                        >
-                          User Name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="userNameField"
-                          placeholder="user name"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label
-                          htmlFor="passwordDropDownForm"
-                          id="label-user-form"
-                        >
-                          Password
-                        </label>
-                        <input
-                          type="password"
-                          className="form-control"
-                          id="passwordField"
-                          placeholder="Password"
-                        />
-                      </div>
-                      <div className="form-check">
-                        <input
-                          type="checkbox"
-                          className="form-check-input"
-                          id="dropdownCheck"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="dropdownCheck"
-                          id="label-user-form"
-                        >
-                          Remember me
-                        </label>
-                      </div>
-                      <button
-                        type="submit"
-                        className="btn btn-primary"
-                        id="user-btn"
-                      >
-                        Sign in
-                      </button>
-                    </form>
-                    <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="a">
-                      New around here? Sign up
-                    </a>
-                    <a className="dropdown-item" href="a">
-                      Forgot password?
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="column-2-6">
-                <div className="nav-item dropdown dropright">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    id="nav-home"
-                    href="a"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Dispatch
-                  </a>
-                  <div className="dropdown-menu" id="login-menu">
-                    <form className="px-4 py-3">
-                      <div className="form-group">
-                        <label
-                          htmlFor="userNameDropDownForm"
-                          id="label-user-form"
-                        >
-                          User Name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="userNameField"
-                          placeholder="user name"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label
-                          htmlFor="passwordDropDownForm"
-                          id="label-user-form"
-                        >
-                          Password
-                        </label>
-                        <input
-                          type="password"
-                          className="form-control"
-                          id="passwordField"
-                          placeholder="Password"
-                        />
-                      </div>
-                      <div className="form-check">
-                        <input
-                          type="checkbox"
-                          className="form-check-input"
-                          id="dropdownCheck"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="dropdownCheck"
-                          id="label-user-form"
-                        >
-                          Remember me
-                        </label>
-                      </div>
-                      <button
-                        type="submit"
-                        className="btn btn-primary"
-                        id="user-btn"
-                      >
-                        Sign in
-                      </button>
-                    </form>
-                    <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="a">
-                      New around here? Sign up
-                    </a>
-                    <a className="dropdown-item" href="a">
-                      Forgot password?
-                    </a>
-                  </div>
-                </div>
-                <a className="text-white h4" href="/customer">
-                  Customer
-                </a>
-                <a className="text-white h4" href="/dispatch">
-                  Dispatch
-                </a>
+      <div>
+
+        <div className="pos-f-t">
+          <div className="collapse" id="navbarToggleExternalContent">
+            <div className="bg-dark p-4" id="navanchors">
+              <div className="column-4" id="nav-container">
+                {loggedIn ? (
+                  <section className="navbar-section">
+                    <Link to="/" className="btn btn-link text-secondary" onClick={this.logout}>
+                      <span className="text-secondary">logout</span></Link>
+                    <Link to="/customer" className="btn btn-link text-secondary" >
+                      <span className="text-secondary">Customer</span>
+                    </Link>
+                    <Link to="/dispatch" className="btn btn-link text-secondary">
+                      <span className="text-secondary">Dispatch</span>
+                    </Link>
+                  </section>
+                ) : (
+                    <section className="navbar-section">
+                      <Link to="/" className="btn btn-link text-secondary" >
+                        <span className="text-secondary">Home</span>
+                      </Link>
+                      <Link to="/login" className="btn btn-link text-secondary">
+                        <span className="text-secondary">Login</span>
+                      </Link>
+                      <Link to="/signup" className="btn btn-link" >
+                        <span className="text-secondary">Sign Up</span>
+                      </Link>
+                    </section>
+                  )}
               </div>
             </div>
           </div>
-        </div>
-        <nav className="navbar navbar-dark bg-dark">
-          <button
-            className="navbar-toggler"
-            id="navbtn"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarToggleExternalContent"
-            aria-controls="navbarToggleExternalContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <p>Click on Fred Sanford to Sign Up or Login!!</p>
+          <nav className="navbar navbar-dark bg-dark">
+            <button
+              className="navbar-toggler"
+              id="navbtn"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarToggleExternalContent"
+              aria-controls="navbarToggleExternalContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon" />
+            </button>
+            <p>Click on Fred Sanford to Sign Up or Login!!</p>
 
-          <h1 className="text" id="title">
-            FAST
+            <h1 className="text" id="title">
+              FAST
           </h1>
-        </nav>
+          </nav>
+        </div>
       </div>
     );
-  }
-}
+  };
+};
 
 export default LoginNav;
-
 

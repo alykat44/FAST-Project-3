@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import DeleteBtn from "../../components/DeleteBtn";
-import Navbar from "../../components/Navbar";
+// import Navbar from "../../components/Navbar";
 import Wrapper from "../../components/Wrapper";
 import API from "../../utils/API";
 // import { Link } from "react-router-dom";
@@ -66,7 +66,6 @@ class Customer extends Component {
     return (
       <div>
         <Wrapper>
-          <Navbar />
           <Container fluid>
             <form>
               <NameInput
