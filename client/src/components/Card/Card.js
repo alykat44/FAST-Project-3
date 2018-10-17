@@ -3,24 +3,19 @@ import CardBtn from "../CardBtn";
 import "./Card.css";
 import Geolocated from "../Geolocation";
 import ReactMapboxGl, { Layer, Feature, Marker } from "react-mapbox-gl";
+
 const Map = ReactMapboxGl({
-lobster
-  accessToken: 
-  "pk.eyJ1Ijoia2M5Z3BqIiwiYSI6ImNqbXhtdHFsbzBjajYzdXVtdXlpanFhZ2cifQ.NCOt6WIwO_19bmi8DUUANQ"
-=======
   accessToken:
-    "pk.eyJ1Ijoia2M5Z3BqIiwiYSI6ImNqbXhtdHFsbzBjajYzdXVtdXlpanFhZ2cifQ.NCOt6WIwO_19bmi8DUUANQ" master
+    "pk.eyJ1Ijoia2M5Z3BqIiwiYSI6ImNqbXhtdHFsbzBjajYzdXVtdXlpanFhZ2cifQ.NCOt6WIwO_19bmi8DUUANQ"
 });
 
 const Card = props => (
   <div className="card">
     <div>
       <Geolocated />
-lobster
-      </div>
-=======
     </div>
-  master
+
+
     <Map
       style="mapbox://styles/mapbox/streets-v9"
       containerStyle={{
@@ -33,11 +28,8 @@ lobster
       }}
     >
       <Layer type="symbol" id="marker" layout={{ "icon-image": "marker-15" }}>
- lobster
         <Feature coordinates={[38.8990, -94.7259]} />
-=======
         <Feature coordinates={[38.899, -94.7259]} />
- master
       </Layer>
       <Marker coordinates={[-94.7149, 38.889]} anchor="bottom">
         <img
@@ -80,9 +72,5 @@ lobster
 
 export default Card;
 
-// style={{
-//       backgroundImage: props.image ? `url(${props.image})` : "none"
-//     }}
 
-//     {!props.image && <i className="fa fa-spinner fa-spin" aria-hidden="true" />}
 
