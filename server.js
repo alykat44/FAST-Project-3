@@ -62,6 +62,16 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session()) // calls the deserializeUser
 
+<<<<<<< HEAD
+=======
+
+app.use((request, response, next) => {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
+>>>>>>> e863bbafef3de85d92c02ba274a9092e7cd6c740
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
