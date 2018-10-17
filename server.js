@@ -14,6 +14,9 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
 const user = require('./routes/user');
+const accountSid = 'AC9be4c10a22363fe6a4958f5f30b7ddc5'; 
+const authToken = '4289f72eda9ff71fbe70bbe983dbac17'; 
+const client = require('twilio')(accountSid, authToken); 
 
 app.set("view engine");
 app.set("views", path.join(__dirname, "../client"));
@@ -56,7 +59,20 @@ app.use("/", routes);
 app.use("/user", user)
 app.use("/customers", routes);
 app.use("/dispatch", routes);
-app.use("/sms", routes);
+
+
+app.post('/sendsms', bodyParser.json(), (req, res) => {
+  console.log('req on server' + req);
+  console.log('res on server' + res);
+  client.messages 
+        .create({ 
+           body: 'hi', 
+           from: '+17857894312',       
+           to: '+17858449914' 
+         }) 
+        .then(message => console.log(message.sid)) 
+        .done();
+})
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./client/public/index.html"));
@@ -65,5 +81,6 @@ app.use("/sms", routes);
 app.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
+
 
 module.exports = app;
