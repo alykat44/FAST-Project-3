@@ -2,7 +2,7 @@ var nodemailer = require("nodemailer");
 const router = require("express").Router();
 const creds = require("./gmailcredentials");
 
-router.post("/send", function(req, res, next) {
+router.post("/send", function (req, res, next) {
   var transport = {
     host: "smtp.gmail.com",
     auth: {
@@ -32,7 +32,7 @@ router.post("/send", function(req, res, next) {
       ".",
     replyTo: `israelrojasshema@gmail.com`
   };
-  transporter.sendMail(mailOptions, function(err, res) {
+  transporter.sendMail(mailOptions, function (err, res) {
     if (err) {
       console.error("there was an error: ", err);
     } else {
@@ -41,8 +41,4 @@ router.post("/send", function(req, res, next) {
   });
 });
 
- lobster
 module.exports = router;
-=======
-module.exports = router;
-master

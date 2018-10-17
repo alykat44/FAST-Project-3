@@ -32,11 +32,42 @@ mongoose.connect(MONGODB_URI);
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+mongoose.connect(uri).then(
+  () => {
+    /** ready to use. The `mongoose.connect()` promise resolves to undefined. */
+    console.log('Connected to Mongo');
+
+  },
+  err => {
+    /** handle initial connection error */
+    console.log('error connecting to Mongo: ')
+    console.log(err);
+
+  }
+);
+
+// Sessions
+app.use(
+  session({
+    secret: 'rock-chalk', //pick a random string to make the hash that is generated secure
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    resave: false, //required
+    saveUninitialized: false //required
+  })
+)
+
+// Passport
+app.use(passport.initialize())
+app.use(passport.session()) // calls the deserializeUser
+
+
 app.use((request, response, next) => {
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Content-Type");
   next();
 });
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
