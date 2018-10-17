@@ -9,3 +9,21 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed; 
 }
+
+h1 {
+  color: white;
+}
+
+.form-label, p {
+  font-size: 24px;
+  color: white; 
+ 
+} 
+
+.login, .SignupForm {
+  padding: 5% 0% 0% 2%;  
+}
+
+.form-group {
+  padding-top: 3%;
+} 

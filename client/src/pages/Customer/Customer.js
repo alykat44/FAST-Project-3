@@ -29,6 +29,29 @@ class Customer extends Component {
     Comments: ""
   };
 
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   const name = this.state.Name;
+  //   const email = this.state.Email;
+  //   const message = "Help is on the way!!!!";
+  //   axios({
+  //     method: "POST",
+  //     url: "http://localhost:3002/send",
+  //     data: {
+  //       name: name,
+  //       email: email,
+  //       messsage: message
+  //     }
+  //   }).then(res => {
+  //     if (res.data.msg === "success") {
+  //       alert("Message Sent.");
+  //       // this.resetForm();
+  //     } else if (res.data.msg === "fail") {
+  //       alert("Message failed to send.");
+  //     }
+  //   });
+  // }
+
   handleInputChange = event => {
     const { name, value } = event.target;
     console.log(name);
@@ -39,7 +62,17 @@ class Customer extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    // alert("working");
+    API.sendEmail({
+      name: this.state.Name,
+      email: this.state.Email,
+      issue: this.state.Issue
+    }).then(res => {
+      if (res.data.msg === "success") {
+        console.log("Message Sent.");
+      } else if (res.data.msg === "fail") {
+        console.log("Message failed to send.");
+      }
+    });
     API.saveCustomer({
       Name: this.state.Name,
       Phone: this.state.Phone,
@@ -71,6 +104,7 @@ class Customer extends Component {
               <NameInput
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
+                handleEmail={this.handleEmail}
                 Name={this.state.Name}
               />
               <PhoneInput
@@ -81,6 +115,7 @@ class Customer extends Component {
               <EmailInput
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
+                handleEmail={this.handleEmail}
                 Email={this.state.Email}
               />
               <LocationInput
@@ -98,10 +133,8 @@ class Customer extends Component {
                 handleFormSubmit={this.handleFormSubmit}
                 Comments={this.state.Message}
               />
-              
+
               <SubBtn onClick={this.handleFormSubmit} />
-              
-              
             </form>
           </Container>
         </Wrapper>
