@@ -4,16 +4,15 @@ import "./Card.css";
 import Geolocated from '../Geolocation';
 import ReactMapboxGl, { Layer, Feature, Marker } from "react-mapbox-gl";
 const Map = ReactMapboxGl({
-  accessToken: "pk.eyJ1Ijoia2M5Z3BqIiwiYSI6ImNqbXhtdHFsbzBjajYzdXVtdXlpanFhZ2cifQ.NCOt6WIwO_19bmi8DUUANQ"
+  accessToken: 
+  "pk.eyJ1Ijoia2M5Z3BqIiwiYSI6ImNqbXhtdHFsbzBjajYzdXVtdXlpanFhZ2cifQ.NCOt6WIwO_19bmi8DUUANQ"
 });
 
 const Card = props => (
-  <div
-    className="card"
-
-  >
-
-    <div><Geolocated /></div>
+  <div className="card">
+    <div>
+      <Geolocated />
+      </div>
     <Map
       style="mapbox://styles/mapbox/streets-v9"
       containerStyle={{
@@ -25,10 +24,7 @@ const Card = props => (
         lat: "38.8990"
       }}
     >
-      <Layer
-        type="symbol"
-        id="marker"
-        layout={{ "icon-image": "marker-15" }}>
+      <Layer type="symbol" id="marker" layout={{ "icon-image": "marker-15" }}>
         <Feature coordinates={[38.8990, -94.7259]} />
       </Layer>
       <Marker
@@ -83,8 +79,3 @@ const Card = props => (
 );
 
 export default Card;
-// style={{
-//       backgroundImage: props.image ? `url(${props.image})` : "none"
-//     }} 
-
-//     {!props.image && <i className="fa fa-spinner fa-spin" aria-hidden="true" />}
