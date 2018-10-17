@@ -7,12 +7,19 @@ import axios from 'axios';
 class LoginNav extends Component {
   constructor() {
     super()
-    this.logout = this.logout.bind(this)
+    this.logout = this.logout.bind(this);
+    this.customer = this.customer.bind(this);
+    this.dispatch = this.dispatch.bind(this);
+    this.login = this.login.bind(this);
+    this.signup = this.signup.bind(this);
+    this.home = this.home.bind(this);
     
+
   }
 
   logout(event) {
     event.preventDefault()
+    window.location = '/';
     console.log('logging out')
     axios.post('/user/logout').then(response => {
       console.log(response.data)
@@ -27,7 +34,32 @@ class LoginNav extends Component {
     })
   }
 
-  
+  customer(event) {
+    event.preventDefault();
+    window.location = '/customer';
+  }
+
+  dispatch(event) {
+    event.preventDefault();
+    window.location = '/dispatch';
+  }
+
+  login(event) {
+    event.preventDefault();
+    window.location = '/login';
+  }
+
+  signup(event) {
+    event.preventDefault();
+    window.location = '/signup';
+  }
+
+  home(event) {
+    event.preventDefault();
+    window.location = '/';
+  }
+
+
 
   render() {
 
@@ -46,22 +78,22 @@ class LoginNav extends Component {
                   <section className="navbar-section">
                     <Link to="/" className="btn btn-link text-secondary" onClick={this.logout}>
                       <span className="text-secondary">logout</span></Link>
-                    <Link to="/customer" className="btn btn-link text-secondary" >
-                      <span className="text-secondary">Customer</span>
+                    <Link to="/customer" className="btn btn-link text-secondary" onClick={this.customer}>
+                      <span className="text-secondary" >Customer</span>
                     </Link>
-                    <Link to="/dispatch" className="btn btn-link text-secondary">
+                    <Link to="/dispatch" className="btn btn-link text-secondary" onClick={this.dispatch}>
                       <span className="text-secondary">Dispatch</span>
                     </Link>
                   </section>
                 ) : (
                     <section className="navbar-section">
-                      <Link to="/" className="btn btn-link text-secondary" >
+                      <Link to="/" className="btn btn-link text-secondary" onClick={this.home} >
                         <span className="text-secondary">Home</span>
                       </Link>
-                      <Link to="/login" className="btn btn-link text-secondary">
-                        <span className="text-secondary">Login</span>
+                      <Link to="/login" className="btn btn-link text-secondary" onClick={this.login}>
+                        <span className="text-secondary" href="/login">Login</span>
                       </Link>
-                      <Link to="/signup" className="btn btn-link" >
+                      <Link to="/signup" className="btn btn-link" onClick={this.signup} >
                         <span className="text-secondary">Sign Up</span>
                       </Link>
                     </section>
