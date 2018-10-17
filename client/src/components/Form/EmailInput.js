@@ -3,7 +3,7 @@ import "./EmailInput.css";
 
 export const EmailInput = props => (
   <div className="form-group">
-    <label htmlfor="Email">Email</label>
+    <label htmlFor="Email">Email</label>
     <input
       type="Email"
       className="form-control"

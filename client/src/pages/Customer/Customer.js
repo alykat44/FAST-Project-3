@@ -104,6 +104,7 @@ class Customer extends Component {
               <NameInput
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
+                handleEmail={this.handleEmail}
                 Name={this.state.Name}
               />
               <PhoneInput
@@ -114,6 +115,7 @@ class Customer extends Component {
               <EmailInput
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
+                handleEmail={this.handleEmail}
                 Email={this.state.Email}
               />
               <LocationInput
@@ -131,10 +133,8 @@ class Customer extends Component {
                 handleFormSubmit={this.handleFormSubmit}
                 Comments={this.state.Message}
               />
-              
+
               <SubBtn onClick={this.handleFormSubmit} />
-              
-              
             </form>
           </Container>
         </Wrapper>
