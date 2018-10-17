@@ -9,3 +9,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed; 
 }
+
+.form-label, p, h4 {
+  color: white;
+}

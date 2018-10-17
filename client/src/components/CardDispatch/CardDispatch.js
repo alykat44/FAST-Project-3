@@ -1,12 +1,17 @@
 import React from "react";
-import "./CardDispatch.css";
+import './CardDispatch.css';
 
-const CardDispatch = props => (
-  <div className="card" id="dispatch-card">
-    <div className="card-body">
-      <h1>Customer Information</h1>
-    </div>
-  </div>
-);
+export const CardDispatch = ({ children }) => {
+    return (
 
-export default CardDispatch;
+        <div className="card" id="dispatch-card">
+            <div className="card-body"><h1>Customer Information</h1></div>
+            <ul className="list-group">
+                {children}
+            </ul>
+        </div>
+
+    );
+
+};
+

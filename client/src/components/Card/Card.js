@@ -14,7 +14,7 @@ const Card = props => (
       <Geolocated />
     </div>
     <Map
-      mapStyle="mapbox://styles/mapbox/streets-v9"
+      style="mapbox://styles/mapbox/streets-v9"
       containerStyle={{
         height: "100vh",
         width: "920px"
