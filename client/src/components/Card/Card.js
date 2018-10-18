@@ -57,6 +57,7 @@ const Card = props => (
       </Marker>
     </Map>
 
+<<<<<<< HEAD
 
 
     <Map
@@ -115,6 +116,23 @@ const Card = props => (
     />
   </div >
 );
+=======
+  
+
+  <CardBtn
+    style={{ opacity: props.image ? 1 : 1 }}
+    onClick={props.handleBtnClick}
+    data-value="pass"
+  />
+  <CardBtn
+    style={{ opacity: props.image ? 1 : 1 }}
+    onClick={props.handleBtnClick}
+    data-value="pick"
+  />
+  </div>
+
+  );
+>>>>>>> 677a6f250d1e70ec28b6a27f7424187f853dbc8b
 
 export default Card;
 
