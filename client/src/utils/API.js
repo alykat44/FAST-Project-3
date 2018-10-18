@@ -11,12 +11,11 @@ export default {
   getCustomers: function () {
     return axios.get("/api/customers");
   },
-  sendEmail: function (data) {
-    console.log(data);
-    return axios.post("/send", data);
-  },
-  sendText: function (data) {
-    return axios.post("/api/sms", data);
+
+  sendText: function(data){
+      console.log("client post at api.js" + data);
+      return axios.post("/api/sms", data);
+
   },
   sendEmail: function (data) {
     console.log(data);
