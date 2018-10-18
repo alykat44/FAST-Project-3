@@ -24,6 +24,7 @@ This application requires a user login for driver information, and location, and
 * JSON
 * SMS Messaging
 * Passport.js
+* Sequelize
 * React.js
 * API
 * Geo-Location
