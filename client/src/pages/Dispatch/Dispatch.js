@@ -12,7 +12,7 @@ import Card from "../../components/Card";
 import SMS from "../../components/SMS/SMS.js";
 // import MessBtn from "../../components/MessBtn";
 import { CardDispatch } from "../../components/CardDispatch";
-import { List, ListItem } from "../../components/List";
+import { List } from "../../components/List";
 
 
 
@@ -44,30 +44,36 @@ class Dispatch extends Component {
           <Container fluid>
             <form>
               <Card />
-              <CardDispatch>
-                {this.state.customers.length ? (
-                  <List>
-                    {this.state.customers.map(customer => (
-                      <ListItem key={customer._id}>
-                        {customer.Name}
-                        {customer.Phone}
-                        {customer.Email}
-                        {customer.Location}
-                        {customer.Issue}
-                        {customer.Message}
-                      </ListItem>
-                    ))}
-                  </List>
-                ) : (
-                    <h3>No Work Orders At This Time</h3>
-                  )}
-              </CardDispatch>
+
+              {this.state.customers.length ? (
+                <CardDispatch>
+                  {
+                    this.state.customers.map(customer => (
+                      <List key={customer._id}>
+                        <div className="card-body">
+                          <ul className="list-group list-group-flush">
+                            <li className="list-group-item">{customer.Name}</li>
+                            <li className="list-group-item">{customer.Phone}</li>
+                            <li className="list-group-item">{customer.Email}</li>
+                            <li className="list-group-item">{customer.Location}</li>
+                            <li className="list-group-item">{customer.Issue}</li>
+                            <li className="list-group-item">{customer.Comments}</li>
+                          </ul>
+                        </div>
+                      </List>
+                    ))
+                  }
+                </CardDispatch>
+              ) : (
+                  <h3>No Work Orders At This Time</h3>
+                )}
+
 
               <SMS />
             </form>
           </Container>
         </Wrapper>
-      </div>
+      </div >
 
     );
   }
