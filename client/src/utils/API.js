@@ -16,12 +16,7 @@ export default {
       console.log("client post at api.js" + data);
       return axios.post("/api/sms", data);
 
-
-  sendEmail: function (data) {
-    console.log(data);
-    return axios.post("/send", data);
   },
-    
   sendEmail: function (data) {
     console.log(data);
     return axios.post("/send", data);
