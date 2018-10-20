@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-/* import API from "../../utils/API" */
 import "./SMS.css";
 import 'whatwg-fetch'
 
@@ -26,9 +25,9 @@ class TextArea extends Component {
   
   handleSubmit(event) {
     var vm = this;
-    console.log(event);
+    console.log(vm.state.text + vm.state.number)
     event.preventDefault();
-    alert("working");
+    alert("Message Sent");
     fetch('/sendsms', {
       method: 'POST',
       headers: {

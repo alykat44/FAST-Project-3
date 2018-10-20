@@ -15,10 +15,9 @@ const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
 const user = require('./routes/user');
 const accountSid = 'AC9be4c10a22363fe6a4958f5f30b7ddc5'; 
-const authToken = '4289f72eda9ff71fbe70bbe983dbac17'; 
+const authToken = 'a0839055e32cb426ce45dd1f41fad469'; 
 const client = require('twilio')(accountSid, authToken); 
 const uri = 'mongodb://localhost:27017/your-app-name'
-
 
 app.set("view engine");
 app.set("views", path.join(__dirname, "../client"));
@@ -87,13 +86,11 @@ app.use("/dispatch", routes);
 
 
 app.post('/sendsms', bodyParser.json(), (req, res) => {
-  console.log('req on server' + req);
-  console.log('res on server' + res);
   client.messages 
         .create({ 
-           body: 'hi', 
+           body: req.body.text, 
            from: '+17857894312',       
-           to: '+17858449914' 
+           to: req.body.number
          }) 
         .then(message => console.log(message.sid)) 
         .done();
