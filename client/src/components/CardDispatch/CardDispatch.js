@@ -1,17 +1,17 @@
 import React from "react";
 import './CardDispatch.css';
 
-export const CardDispatch = ({ children }) => {
+export const CardDispatch = ({ fluid, children }) => {
     return (
+        <div className={`container${fluid ? "-fluid" : ""}`}>
+            <h1>Customer Information</h1>
 
-        <div className="card" id="dispatch-card">
-            <div className="card-body"><h1>Customer Information</h1></div>
-            <ul className="list-group">
-                {children}
-            </ul>
+            {children}
         </div>
+
 
     );
 
 };
+
 

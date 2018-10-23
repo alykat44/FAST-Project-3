@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import API from "../../utils/API"
+/* import API from "../../utils/API" */
 import "./SMS.css";
+import 'whatwg-fetch'
 
 class TextArea extends Component {
     constructor(props) {
@@ -21,17 +22,20 @@ class TextArea extends Component {
     this.setState({
       [name]: value
     });
-    console.log(this.state.text);
-    console.log(this.state.number);
   }
   
   handleSubmit(event) {
     var vm = this;
+    console.log(event);
     event.preventDefault();
     alert("working");
-    API.sendText({
-      text: vm.state.text,
-      number: vm.state.number,
+    fetch('/sendsms', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/JSON',
+        'Content-Type': 'application/JSON'
+      },
+      body: JSON.stringify({"text": vm.state.text, "number": vm.state.number})
     })
       .then(res =>
         this.setState({
