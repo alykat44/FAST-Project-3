@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Customer from "./pages/Customer";
 import Dispatch from "./pages/Dispatch";
-// import Login from "./pages/Login";
 import axios from 'axios';
 import React, { Component } from 'react';
-
 import Signup from './components/Login/sign-up';
 import LoginForm from './components/Login/login-form';
 import LoginNav from './components/LoginNav';
@@ -52,11 +50,11 @@ class App extends Component {
         })
       }
     })
-    .catch(error => {
-      console.log(error.response)
-    
-  });
-}
+      .catch(error => {
+        console.log(error.response)
+
+      });
+  }
 
   render() {
 
@@ -64,22 +62,14 @@ class App extends Component {
       <div className="App">
 
         <LoginNav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        
-       
-
-
-
 
         <Router>
-
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/login" render={() => <LoginForm updateUser={this.updateUser} />} />
             <Route path="/signup" render={() => <Signup />} />
-            {/* <Route exact path="/" component={Login} /> */}
             <Route path="/customer" component={Customer} />
             <Route path="/dispatch" component={Dispatch} />
-            {/* <Route exact path="/map" component={Map} /> */}
           </Switch>
         </Router>
 

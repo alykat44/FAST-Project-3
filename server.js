@@ -1,5 +1,3 @@
-// Dependencies
-//fix me
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -10,14 +8,20 @@ const routes = require("./routes");
 const mongoose = require("mongoose");
 const morgan = require('morgan')
 const session = require('express-session')
-// const dbConnection = require('./models')
 const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
 const user = require('./routes/user');
+<<<<<<< HEAD
+const accountSid = 'AC9be4c10a22363fe6a4958f5f30b7ddc5';
+const authToken = 'a0839055e32cb426ce45dd1f41fad469';
+const client = require('twilio')(accountSid, authToken);
+const uri = 'mongodb://localhost:27017/your-app-name'
+=======
 const accountSid = 'AC9be4c10a22363fe6a4958f5f30b7ddc5'; 
 const authToken = 'a0839055e32cb426ce45dd1f41fad469'; 
 const client = require('twilio')(accountSid, authToken); 
 const uri = 'mongodb://heroku_t631vvjm:heroku_t631vvjm@ds137703.mlab.com:37703/heroku_t631vvjm'
+>>>>>>> 44b608b6afc25154b2b1271e72fe9858a5ef6de4
 
 app.set("view engine");
 app.set("views", path.join(__dirname, "../client"));
@@ -27,7 +31,7 @@ const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://heroku_t631vvjm:heroku_t631vvjm@ds137703.mlab.com:37703/heroku_t631vvjm";
 
 mongoose.Promise = global.Promise;
-// mongoose.set('useNewUrlParser', true);
+mongoose.set('useNewUrlParser', true);
 mongoose.connect(
   MONGODB_URI
 );
@@ -86,26 +90,21 @@ app.use("/dispatch", routes);
 
 
 app.post('/sendsms', bodyParser.json(), (req, res) => {
-  client.messages 
-        .create({ 
-           body: req.body.text, 
-           from: '+17857894312',       
-           to: req.body.number
-         }) 
-        .then(message => console.log(message.sid)) 
-        .done();
+  client.messages
+    .create({
+      body: req.body.text,
+      from: '+17857894312',
+      to: req.body.number
+    })
+    .then(message => console.log(message.sid))
+    .done();
 })
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
 
 module.exports = app;
-
 
 
 
