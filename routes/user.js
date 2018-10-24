@@ -1,4 +1,3 @@
-
 const router = require('express').Router()
 const User = require('../models/user')
 const passport = require('../passport')
@@ -6,7 +5,7 @@ const passport = require('../passport')
 router.post('/', (req, res) => {
     console.log('user signup');
 
-    const { username, password } = req.body
+    const { username, password, role } = req.body
     // ADD VALIDATION
     User.findOne({ username: username }, (err, user) => {
         if (err) {
@@ -19,7 +18,8 @@ router.post('/', (req, res) => {
         else {
             const newUser = new User({
                 username: username,
-                password: password
+                password: password,
+                role: role
             })
             newUser.save((err, savedUser) => {
                 if (err) return res.json(err)
@@ -40,7 +40,8 @@ router.post(
     (req, res) => {
         console.log('logged in', req.user);
         var userInfo = {
-            username: req.user.username
+            username: req.user.username,
+            role: req.user.role
         };
         res.send(userInfo);
     }
@@ -50,7 +51,10 @@ router.get('/', (req, res, next) => {
     console.log('===== user!!======')
     console.log(req.user)
     if (req.user) {
-        res.json({ user: req.user })
+        res.json({
+            user: req.user,
+            role: req.role
+        })
     } else {
         res.json({ user: null })
     }

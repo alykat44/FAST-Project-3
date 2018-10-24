@@ -65,4 +65,4 @@ center={{
 }
 }
 
-export default Map;
+export default Maps;
