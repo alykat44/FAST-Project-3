@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/FAST-project3"
+  process.env.MONGODB_URI || "mongodb://heroku_t631vvjm:heroku_t631vvjm@ds137703.mlab.com:37703/heroku_t631vvjm"
 );
 
 const CustomerSeed = [

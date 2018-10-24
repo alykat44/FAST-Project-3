@@ -26,9 +26,7 @@ class TextArea extends Component {
 
   handleSubmit(event) {
     var vm = this;
-    console.log(vm.state.text + vm.state.number)
     event.preventDefault();
-    alert("Message Sent");
     fetch('/sendsms', {
       method: 'POST',
       headers: {
@@ -44,6 +42,10 @@ class TextArea extends Component {
         })
       )
       .catch(err => console.log(err));
+
+      alert("Message Sent");
+  };
+
 
 };
 
