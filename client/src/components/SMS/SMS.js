@@ -79,6 +79,6 @@ class TextArea extends Component {
 
   );
 }
-}
+
 
 export default TextArea;
