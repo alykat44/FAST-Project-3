@@ -6,9 +6,7 @@ a {
 .navbar-toggler {
     background-image: url("../../images/bigone.jpg");
     background-repeat: no-repeat;
-    /* background-size: cover; */
     background-position: center;
-    /* background-attachment: fixed; */
     height: 200px;
     width: 250px;
     border-radius: 25%;
@@ -21,6 +19,15 @@ a {
     letter-spacing: 45px;
 }
 
+@media screen and (max-width: 568px) {
+
+#title {
+    font-size: 48px;
+    margin: auto;
+    letter-spacing: 15px;
+}
+
+}
 
 
 

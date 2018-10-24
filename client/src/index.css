@@ -26,4 +26,26 @@ h1 {
 
 .form-group {
   padding-top: 3%;
-} 
+}
+
+table {
+  opacity: 0;
+}
+
+.list-group-item:first-child {
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.list-group-item:last-child {
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+@media screen and (max-width: 568px) {
+
+  .mapboxgl-map {
+    width: 200px;
+    position: fixed;
+  }
+}
