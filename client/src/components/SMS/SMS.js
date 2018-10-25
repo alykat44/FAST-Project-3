@@ -43,42 +43,44 @@ class TextArea extends Component {
       )
       .catch(err => console.log(err));
 
-      alert("Message Sent");
+    alert("Message Sent");
   };
 
 
+
+
+
+
+  render() {
+    return (
+      <div className="form-group">
+        <input
+          className="form-control"
+          rows="5"
+          name="text"
+          type="text"
+          placeholder="Text Message"
+          value={this.state.text}
+          onChange={this.handleChange}
+        />
+        <input
+          className="form-control"
+          rows="1"
+          name="number"
+          type="text"
+          placeholder="Phone Number"
+          value={this.state.number}
+          onChange={this.handleChange}
+
+        />
+        <button type="submit" value="Submit" className="btn btn-primary btn-block" onClick={this.handleSubmit}> Send Text </button>
+        <button type="submit" value="Submit" className="btn btn-danger btn-block" onClick={this.handleSubmit}> Make Payment Here </button>
+      </div>
+
+    );
+
+  }
 };
 
-      
-    
-      render() {
-  return (
-    <div className="form-group">
-      <input
-        className="form-control"
-        rows="5"
-        name="text"
-        type="text"
-        placeholder="Text Message"
-        value={this.state.text}
-        onChange={this.handleChange}
-      />
-      <input
-        className="form-control"
-        rows="1"
-        name="number"
-        type="text"
-        placeholder="Phone Number"
-        value={this.state.number}
-        onChange={this.handleChange}
-
-      />
-      <button type="submit" value="Submit" className="btn btn-primary btn-block" onClick={this.handleSubmit}> Send Text </button>
-      <button type="submit" value="Submit" className="btn btn-danger btn-block" onClick={this.handleSubmit}> Make Payment Here </button>
-    </div>
-
-  );
-}
-}
 
 export default TextArea;
