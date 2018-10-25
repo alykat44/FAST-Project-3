@@ -14,18 +14,18 @@ const user = require('./routes/user');
 const accountSid = 'AC9be4c10a22363fe6a4958f5f30b7ddc5'; 
 const authToken = 'a0839055e32cb426ce45dd1f41fad469'; 
 const client = require('twilio')(accountSid, authToken); 
-// const uri = 'mongodb://localhost:27017/your-app-name';
-const uri = 'mongodb://wustix:otis13jhawkhalo@ds141623.mlab.com:41623/fredtow';
+// const uri = 'mongodb://localhost:27017/FAST-project3';
+const uri = "mongodb://wustix:otis13jhawkhalo@ds141623.mlab.com:41623/fredtow";
 
 app.set("view engine");
 app.set("views", path.join(__dirname, "../client"));
 app.use(express.static(path.join(__dirname, "../client")));
 
 const MONGODB_URI =
-  process.env.MONGODB_URI || 'mongodb://wustix:otis13jhawkhalo@ds141623.mlab.com:41623/fredtow';
+  process.env.MONGODB_URI || "mongodb://wustix:otis13jhawkhalo@ds141623.mlab.com:41623/fredtow";
 
 mongoose.Promise = global.Promise;
-mongoose.set('useNewUrlParser', true);
+// mongoose.set('useNewUrlParser', true);
 mongoose.connect(
   MONGODB_URI
 );
