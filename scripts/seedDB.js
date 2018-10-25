@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://heroku_t631vvjm:heroku_t631vvjm@ds137703.mlab.com:37703/heroku_t631vvjm"
+  process.env.MONGODB_URI || 'mongodb://wustix:otis13jhawkhalo@ds141623.mlab.com:41623/fredtow'
 );
 
 const CustomerSeed = [
