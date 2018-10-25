@@ -2743,7 +2743,11 @@ eslint@4.10.0:
 
 espree@^3.5.1:
   version "3.5.4"
+<<<<<<< HEAD
+  resolved "https://registry.yarnpkg.com/espree/-/espree-3.5.4.tgz#b0f447187c8a8bed944b815a660bddf5deb5d1a7"
+=======
   resolved "http://registry.npmjs.org/espree/-/espree-3.5.4.tgz#b0f447187c8a8bed944b815a660bddf5deb5d1a7"
+>>>>>>> master
   dependencies:
     acorn "^5.5.0"
     acorn-jsx "^3.0.0"
