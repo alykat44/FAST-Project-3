@@ -10,10 +10,11 @@ class Home extends Component {
         }
         return (
             <div>
-                <p>It's good to be home</p>
-                <img style={imageStyle} alt="hobbit" src="https://i.ytimg.com/vi/N1icEHtgb3g/maxresdefault.jpg" />
+                <p>Trust Us to Get You Home Safely</p>
+                <img style={imageStyle} alt="tow" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMKC8cyElCY_hrnhzhH049iSpDc37IC0TBhoqadvADRtzLe72h"/>
             </div>
         )
     }
 }
-export default Home
+export default Home;
+
