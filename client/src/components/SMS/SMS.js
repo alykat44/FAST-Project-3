@@ -41,10 +41,6 @@ class TextArea extends Component {
         })
       )
       .catch(err => console.log(err));
-<<<<<<< HEAD
-
-=======
->>>>>>> master
     alert("Message Sent");
   };
 
@@ -69,43 +65,6 @@ class TextArea extends Component {
           value={this.state.number}
           onChange={this.handleChange}
 
-<<<<<<< HEAD
-
-
-
-
-  render() {
-    return (
-      <div className="form-group">
-        <input
-          className="form-control"
-          rows="5"
-          name="text"
-          type="text"
-          placeholder="Text Message"
-          value={this.state.text}
-          onChange={this.handleChange}
-        />
-        <input
-          className="form-control"
-          rows="1"
-          name="number"
-          type="text"
-          placeholder="Phone Number"
-          value={this.state.number}
-          onChange={this.handleChange}
-
-        />
-        <button type="submit" value="Submit" className="btn btn-primary btn-block" onClick={this.handleSubmit}> Send Text </button>
-        <button type="submit" value="Submit" className="btn btn-danger btn-block" onClick={this.handleSubmit}> Make Payment Here </button>
-      </div>
-
-    );
-
-  }
-};
-
-=======
         />
         <button type="submit" value="Submit" className="btn btn-primary btn-block" onClick={this.handleSubmit}> Send Text </button>
         <button type="submit" value="Submit" className="btn btn-danger btn-block" onClick={this.handleSubmit}> Pay Here </button>
@@ -115,7 +74,6 @@ class TextArea extends Component {
     );
   }
 }
->>>>>>> master
 
 
 
