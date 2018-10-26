@@ -94,13 +94,15 @@ app.post('/sendsms', bodyParser.json(), (req, res) => {
     .done();
 })
 
-app.get('*', (req, res) => res.sendFile(path.resolve('build', 'index.html')));
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'build', 'index.html')));
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
 
 module.exports = app;
+
+// check out
 
 
 
