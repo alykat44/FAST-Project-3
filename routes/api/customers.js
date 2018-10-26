@@ -7,6 +7,9 @@ const creds = require("./gmailcredentials");
 router
   .route("/")
   .post(customersController.create)
-  .get(customersController.findAll);
+  .get(customersController.findAll)
+  .delete(customersController.remove);
+
+router.route("/:id").delete(customersController.remove);
 
 module.exports = router;
