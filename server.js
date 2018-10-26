@@ -19,7 +19,7 @@ const uri = "mongodb://wustix:otis13jhawkhalo@ds141623.mlab.com:41623/fredtow";
 
 app.set("view engine");
 app.set("views", path.join(__dirname, "../client"));
-app.use(express.static(path.join(__dirname, "../client")));
+// app.use(express.static(path.join(__dirname, "../client")));
 
 const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://wustix:otis13jhawkhalo@ds141623.mlab.com:41623/fredtow";
