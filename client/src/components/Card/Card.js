@@ -29,7 +29,7 @@ const Card = props => (
     >
       <Layer type="symbol" id="marker" layout={{ "icon-image": "marker-15" }}>
         <Feature coordinates={[38.8990, -94.7259]} />
-        <Feature coordinates={[38.899, -94.7259]} />
+        <Feature coordinates={[38.899, -93.7259]} />
       </Layer>
       <Marker coordinates={[-94.7149, 38.889]} anchor="bottom">
         <img

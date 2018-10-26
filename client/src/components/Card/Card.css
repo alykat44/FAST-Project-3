@@ -17,3 +17,9 @@
   left: 25%;
   top: 25%;
 }
+
+@media screen and (max-width: 568px) {
+containerStyle {
+  width: 920px;
+}  
+}

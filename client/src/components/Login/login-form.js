@@ -8,11 +8,12 @@ class LoginForm extends Component {
         this.state = {
             username: '',
             password: '',
+            role: '',
             redirectTo: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
-  
+
     }
 
     handleChange(event) {
@@ -25,11 +26,11 @@ class LoginForm extends Component {
         event.preventDefault()
         console.log('handleSubmit')
 
-        axios
-            .post('/user/login', {
-                username: this.state.username,
-                password: this.state.password
-            })
+        axios.post('/user/login', {
+            username: this.state.username,
+            password: this.state.password,
+            role: this.state.role
+        })
             .then(response => {
                 console.log('login response: ')
                 console.log(response)
@@ -37,17 +38,26 @@ class LoginForm extends Component {
                     // update App.js state
                     this.props.updateUser({
                         loggedIn: true,
-                        username: response.data.username
+                        username: response.data.username,
+                        role: response.data.role
                     })
-                    // update the state to redirect to home
-                    this.setState({
-                        redirectTo: '/'
-                    })
+                    console.log(response.data.role)
+                    if (response.data.role.indexOf("Administrator") > -1) {
+                        // update the state to redirect to correct Admin page
+                        this.setState({
+                            redirectTo: '/dispatch'
+                        })
+                    } else {
+                        this.setState({
+                            redirectTo: '/customer'
+                        })
+                    }
                 }
+
             }).catch(error => {
                 console.log('login error: ')
                 console.log(error);
-                
+
             })
     }
 
@@ -91,8 +101,7 @@ class LoginForm extends Component {
                         <div className="form-group ">
                             <div className="col-7"></div>
                             <button
-                                className="btn btn-primary col-1 col-mr-auto"
-                               
+                                className="btn btn-primary"
                                 onClick={this.handleSubmit}
                                 type="submit">Login</button>
                         </div>
