@@ -30,6 +30,10 @@ mongoose.connect(
   MONGODB_URI
 );
 
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 // Define middleware here
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: true }));
