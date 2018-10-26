@@ -13,8 +13,13 @@ import Tab from "@material-ui/core/Tab";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import NavigationIcon from "@material-ui/icons/Navigation";
-
+let Truck = 5;
+let Available = 0;
+let Transit = 0;
 class Dispatch extends Component {
+  Truck = 5;
+  Available = 0;
+  Transit = 0;
   state = {
     customers: []
   };
@@ -22,6 +27,12 @@ class Dispatch extends Component {
   componentDidMount() {
     this.loadCustomers();
   }
+
+  deleteCustomer = id => {
+    API.deleteCustomer(id)
+      .then(res => this.loadCustomers())
+      .catch(err => console.log(err));
+  };
 
   loadCustomers = () => {
     API.getCustomers()
@@ -32,6 +43,22 @@ class Dispatch extends Component {
         });
       })
       .catch(err => console.log(err));
+  };
+
+  assignTruck = () => {
+    Available = Truck - 1;
+    Truck = Available;
+    let Working = Transit + 1;
+    Transit = Working;
+    console.log(Available);
+  };
+
+  addTruck = () => {
+    let Added = Available + 1;
+
+    Available = Added;
+
+    console.log(Available);
   };
 
   render() {
@@ -52,7 +79,7 @@ class Dispatch extends Component {
               />
               <Tab
                 label={
-                  <Badge color="secondary" badgeContent={0}>
+                  <Badge color="secondary" badgeContent={Transit}>
                     Orders In Transit
                   </Badge>
                 }
@@ -68,7 +95,11 @@ class Dispatch extends Component {
           </AppBar>
 
           <Container fluid>
-            <Badge color="primary" badgeContent={5}>
+            <Badge
+              onClick={this.addTruck}
+              color="primary"
+              badgeContent={this.Available}
+            >
               <Button variant="contained">Tow Trucks Available</Button>
             </Badge>
             <form>
@@ -90,14 +121,18 @@ class Dispatch extends Component {
                             {customer.Comments}
                           </li>
                           <Button
-                            onClick={this.handleFormSubmit}
+                            onClick={() => this.deleteCustomer(customer._id)}
                             variant="contained"
                             color="secondary"
                           >
                             Delete
                             <DeleteIcon />
                           </Button>
-                          <Button variant="extendedFab" aria-label="Delete">
+                          <Button
+                            onClick={this.assignTruck}
+                            variant="extendedFab"
+                            aria-label="Delete"
+                          >
                             <NavigationIcon />
                             Assign to tow Truck
                           </Button>

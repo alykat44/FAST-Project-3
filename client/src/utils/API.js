@@ -3,22 +3,24 @@ import axios from "axios";
 export default {
   // Saves a Customer to the database
 
-  saveCustomer: function (customerData) {
-
+  saveCustomer: function(customerData) {
     console.log(customerData);
     return axios.post("/api/customers", customerData);
   },
-  getCustomers: function () {
+  getCustomers: function() {
     return axios.get("/api/customers");
   },
 
-  sendText: function(data){
-      console.log("client post at api.js" + data);
-      return axios.post("/api/sms", data);
-
+  sendText: function(data) {
+    console.log("client post at api.js" + data);
+    return axios.post("/api/sms", data);
   },
-  sendEmail: function (data) {
+  sendEmail: function(data) {
     console.log(data);
     return axios.post("/send", data);
+  },
+  deleteCustomer: function(id) {
+    console.log(id);
+    return axios.delete("/api/customers/" + id);
   }
 };
