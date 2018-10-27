@@ -87,7 +87,7 @@ class Dispatch extends Component {
               <Tab
                 label={
                   <Badge color="secondary" badgeContent={0}>
-                    Need to Bill/Complete
+                    Need to Complete
                   </Badge>
                 }
               />
@@ -120,30 +120,31 @@ class Dispatch extends Component {
                           <li className="list-group-item">
                             {customer.Comments}
                           </li>
-                          <Button
-                            onClick={() => this.deleteCustomer(customer._id)}
-                            variant="contained"
-                            color="secondary"
-                          >
-                            Delete
-                            <DeleteIcon />
-                          </Button>
-                          <Button
-                            onClick={this.assignTruck}
-                            variant="extendedFab"
-                            aria-label="Delete"
-                          >
-                            <NavigationIcon />
-                            Assign to tow Truck
-                          </Button>
                         </ul>
+                        <Button
+                          onClick={() => this.deleteCustomer(customer._id)}
+                          variant="contained"
+                          color="secondary"
+                        >
+                          Delete
+                            <DeleteIcon />
+                        </Button>
+                        <Button
+                          onClick={this.assignTruck}
+                          variant="extendedFab"
+                          aria-label="Delete"
+                        >
+                          <NavigationIcon />
+                          Assign to tow Truck
+                          </Button>
+
                       </div>
                     </List>
                   ))}
                 </CardDispatch>
               ) : (
-                <h3>No Work Orders At This Time</h3>
-              )}
+                  <h3>No Work Orders At This Time</h3>
+                )}
 
               <SMS />
             </form>

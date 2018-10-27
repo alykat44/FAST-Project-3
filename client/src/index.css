@@ -20,7 +20,7 @@ h1 {
  
 } 
 
-.login, .SignupForm {
+.login, .SignupForm, .trucker {
   padding: 5% 0% 0% 2%;  
 }
 
@@ -40,12 +40,14 @@ table {
 .list-group-item:last-child {
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
+  margin-bottom: 30px;
 }
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 320px) {
 
   .mapboxgl-map {
     width: 200px;
     position: fixed;
   }
+
 }
