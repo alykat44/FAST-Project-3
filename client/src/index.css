@@ -43,11 +43,14 @@ table {
   margin-bottom: 30px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 568px) {
 
-  .mapboxgl-map {
-    width: 200px;
-    position: fixed;
+  .del-btn {
+    margin-bottom: 15px;
+  }
+
+  .trucker {
+    padding: 5% 0% 0% 0%;
   }
 
 }
