@@ -1,6 +1,6 @@
 import React from "react";
 import "./LocationInput.css";
-import Geolocation from "../Geolocation";
+
 
 export const LocationInput = props => (
   <div className="form-group">
@@ -13,7 +13,7 @@ export const LocationInput = props => (
       onChange={props.handleInputChange}
       name="Location"
     />
-    <div  className="location"><Geolocation></Geolocation></div>
+    <div className="location"><Geolocation></Geolocation></div>
 
   </div>
 );

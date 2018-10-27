@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-// import DeleteBtn from "../../components/DeleteBtn";
-// import Navbar from "../../components/Navbar";
 import Wrapper from "../../components/Wrapper";
 import API from "../../utils/API";
-// import { Link } from "react-router-dom";
 import { Container } from "../../components/Container";
 import SubBtn from "../../components/SubBtn";
-// import { List, ListItem } from "../../components/List";
 import {
   NameInput,
   PhoneInput,
@@ -15,8 +11,6 @@ import {
   TextArea,
   Options
 } from "../../components/Form";
-
-// import API from "../../utils/API";
 
 class Customer extends Component {
   state = {
@@ -28,29 +22,6 @@ class Customer extends Component {
     Issue: "",
     Comments: ""
   };
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const name = this.state.Name;
-  //   const email = this.state.Email;
-  //   const message = "Help is on the way!!!!";
-  //   axios({
-  //     method: "POST",
-  //     url: "http://localhost:3002/send",
-  //     data: {
-  //       name: name,
-  //       email: email,
-  //       messsage: message
-  //     }
-  //   }).then(res => {
-  //     if (res.data.msg === "success") {
-  //       alert("Message Sent.");
-  //       // this.resetForm();
-  //     } else if (res.data.msg === "fail") {
-  //       alert("Message failed to send.");
-  //     }
-  //   });
-  // }
 
   handleInputChange = event => {
     const { name, value } = event.target;
