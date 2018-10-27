@@ -33,7 +33,7 @@ This application requires a user login for driver information, and location, and
 
 # Heroku Link:  
  
-https://git.heroku.com/fredandsons.git
+https://dashboard.heroku.com/apps/fredandsons/deploy/github
   
 
 
