@@ -1,5 +1,4 @@
 import React from "react";
-import CardBtn from "../CardBtn";
 import "./Card.css";
 import Geolocated from "../Geolocation";
 import ReactMapboxGl, { Layer, Feature, Marker } from "react-mapbox-gl";
@@ -16,11 +15,11 @@ const Card = props => (
     </div>
 
 
-    <Map
+    <Map 
       style="mapbox://styles/mapbox/streets-v9"
       containerStyle={{
-        height: "100vh",
-        width: "920px"
+        height: "100%",
+        width: "100%"
       }}
       center={{
         lng: "-94.7259",
@@ -57,18 +56,6 @@ const Card = props => (
       </Marker>
     </Map>
 
-  
-
-  <CardBtn
-    style={{ opacity: props.image ? 1 : 1 }}
-    onClick={props.handleBtnClick}
-    data-value="pass"
-  />
-  <CardBtn
-    style={{ opacity: props.image ? 1 : 1 }}
-    onClick={props.handleBtnClick}
-    data-value="pick"
-  />
   </div>
 
   );
