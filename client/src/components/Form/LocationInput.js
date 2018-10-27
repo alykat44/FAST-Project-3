@@ -1,5 +1,6 @@
 import React from "react";
 import "./LocationInput.css";
+import Geolocation from "../Geolocation";
 
 
 export const LocationInput = props => (
