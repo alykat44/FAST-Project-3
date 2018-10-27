@@ -92,6 +92,7 @@ class Signup extends Component {
 						<div className="window">
 							<select
 								className="form-control"
+								id="options"
 								name="role"
 								value={this.state.role}
 								onChange={this.handleChange}

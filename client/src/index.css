@@ -49,13 +49,13 @@ table {
   
 }
 
-.form-control {
+#options {
   width: 18%;
 }
 
 @media screen and (max-width: 568px) {
 
- .form-control {
+ #options {
    width: 95%;
  }
 
