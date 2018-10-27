@@ -13,7 +13,7 @@ class LoginNav extends Component {
     this.login = this.login.bind(this);
     this.signup = this.signup.bind(this);
     this.home = this.home.bind(this);
-    
+
 
   }
 
@@ -114,11 +114,11 @@ class LoginNav extends Component {
             >
               <span className="navbar-toggler-icon" />
             </button>
-            <p>Click on Fred Sanford to Sign Up or Login!!</p>
-
-            <h1 className="text" id="title">
-              FAST
-          </h1>
+            <div>
+              <p>Click on Fred Sanford to Sign Up or Login!!</p>
+              <span id="fred">Fred And Sons Towing</span>
+            </div>
+            <h1 className="text" id="title">FAST</h1>
           </nav>
         </div>
       </div>

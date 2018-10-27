@@ -43,14 +43,18 @@ table {
   margin-bottom: 30px;
 }
 
+#fred {
+  color: royalblue;
+  font-size: 48px;
+  
+}
+
 @media screen and (max-width: 568px) {
 
-  .del-btn {
-    margin-bottom: 15px;
-  }
+ 
 
   .trucker {
-    padding: 5% 0% 0% 0%;
+    padding: 5% 0% 0% 5%;
   }
 
 }
