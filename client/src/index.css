@@ -55,7 +55,9 @@ table {
 
 @media screen and (max-width: 568px) {
 
- 
+ .form-control {
+   width: 95%;
+ }
 
   .trucker {
     padding: 5% 0% 0% 5%;
