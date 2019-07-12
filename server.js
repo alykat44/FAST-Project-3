@@ -33,19 +33,19 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-mongoose.connect(uri).then(
-  () => {
-    /** ready to use. The `mongoose.connect()` promise resolves to undefined. */
-    console.log('Connected to Mongo');
+// mongoose.connect(uri).then(
+//   () => {
+//     /** ready to use. The `mongoose.connect()` promise resolves to undefined. */
+//     console.log('Connected to Mongo');
 
-  },
-  err => {
-    /** handle initial connection error */
-    console.log('error connecting to Mongo: ')
-    console.log(err);
+//   },
+//   err => {
+//     /** handle initial connection error */
+//     console.log('error connecting to Mongo: ')
+//     console.log(err);
 
-  }
-);
+//   }
+// );
 
 // Sessions
 app.use(
