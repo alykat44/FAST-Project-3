@@ -10,6 +10,10 @@ The FAST application offers a real-time environment that provides vehicle suppor
 
 This application requires a user login for driver information, and location, and what service is desired. The request is sent to Dispatch and then relayed to the closest tow truck driver nearest the patron.  The SMS capability will put the user in contact with the tow truck driver currently in route to offer asssistance. This applicaton utilizes a User login and a Dispath login to provide separate MongoDB systems for User information and Location status.
 
+# Getting Started
+
+Click on the above Heroku link to go to application.  
+
 
 
 # Technologies Utilized
