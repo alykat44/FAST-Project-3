@@ -31,8 +31,8 @@ class Customer extends Component {
     });
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
+  handleFormSubmit = () => {
+    // event.preventDefault();
     API.sendEmail({
       name: this.state.Name,
       email: this.state.Email,
